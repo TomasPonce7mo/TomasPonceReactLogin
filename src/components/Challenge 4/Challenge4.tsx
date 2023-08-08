@@ -39,7 +39,7 @@ export const Challenge4 = () => {
         <TextInput className="TextInput" id="username" type="text" label="Username" />
         <TextInput className="TextInput" id="passwd" type="password" label="Password" />
         <Link linktext="Forgot Password ?" link="App.tsx" linkclass="colorwhite nounderline forgotpassword" />
-        <SubmitButton className="btn-violet submitbutton bold" divclass="divbutton" />
+        <SubmitButton className="btn-violet submitbutton bold" divclass="divbutton" text="Sign in" />
         <TextBetweenLine text="Login with social accounts" />
         <SocialLinksTable social={social} /> <br></br>
         <TextPlusLink texttype="span" text="Don't have an account?" textclass="smalltext" 
