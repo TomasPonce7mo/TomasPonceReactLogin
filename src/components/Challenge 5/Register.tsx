@@ -34,9 +34,9 @@ const social =[{
 
 
 export const Register = () => {
-  const [event, setevent] = useState("green");
+  const [event, setevent] = useState("red");
   function eventActivate() {
-    setevent("red");
+    setevent("green");
   }
   return (
     <>
