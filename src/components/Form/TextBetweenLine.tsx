@@ -1,12 +1,18 @@
 interface Props {
-    text: string
+    text: string,
+    className?: string
   }
+
+  const defaultProps = {
+    className: ''
+  };
   
-  export const TextBetweenLine = (props:Props) => {
-  
+  export const TextBetweenLine = (propsIn:Props) => {
+    const props = {...defaultProps, ...propsIn};
+    const className = 'textbetweenline ' + props.className;
       return (
         <>
-            <p className="textbetweenline"><span>{props.text}</span></p>
+            <p className={className}><span>{props.text}</span></p>
         </>
       )
     }

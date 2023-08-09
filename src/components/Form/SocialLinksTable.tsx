@@ -1,12 +1,19 @@
 import { SocialLinkImage } from "./SocialLinkImage"
 
 interface Props {
-    social: any[];
+    social: any[],
+    className?: string
 }
 
-export const SocialLinksTable = ( props: Props ) => {
+const defaultProps = {
+  className: ''
+}
+
+export const SocialLinksTable = ( propsIn: Props ) => {
+  const props = {...defaultProps, ...propsIn};
+  const className = 'socialtable ' + props.className;
   return (
-    <div className="socialtable">
+    <div className={className}>
         {props.social.map(social => <SocialLinkImage onclickaction={social.action} imgsrc={social.imgsrc} />)}
     </div>
   )
