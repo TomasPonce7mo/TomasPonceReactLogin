@@ -4,7 +4,7 @@ import { Text } from "../Form/Text";
 import { TextBetweenLine } from "../Form/TextBetweenLine";
 import { SocialLinksTable } from "../Form/SocialLinksTable";
 import { Circle } from "../Form/Circle";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const googlealert = () => {
   alert("google.com");
@@ -29,15 +29,28 @@ const social =[{
   imgsrc: "https://i.imgur.com/iGFoy11.png"
 }]
 
+interface Props {
+  flagsetter: React.Dispatch<React.SetStateAction<string>>,
+  flag: string
+}
 
 
 
+export const Register = ( props:Props ) => {
+const [color, setcolor] = useState("red")
+  
 
-export const Register = () => {
-  const [event, setevent] = useState("red");
   function eventActivate() {
-    setevent("green");
+    props.flagsetter('register');
   }
+  useEffect(() => {
+    if (props.flag == "register"){
+      setcolor("green")
+    }
+    else {
+      setcolor("red");
+    }
+  }, [props.flag]);
   return (
     <>
       <div className="form1">
@@ -55,7 +68,7 @@ export const Register = () => {
       <SocialLinksTable social={social} className="gap25" />
       </div>
       </div>
-      <Circle width="100" height="100" cx="50" cy="50" r="40" fill={event} divclass="textaligncenter" 
+      <Circle width="100" height="100" cx="50" cy="50" r="40" fill={color} divclass="textaligncenter" 
       circleid="circle" />
     </>
   )

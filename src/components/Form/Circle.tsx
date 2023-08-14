@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react"
+
 interface Props {
     width: string,
     height: string,
@@ -11,7 +13,7 @@ interface Props {
     circleclass?: string,
     svgid?: string,
     circleid?: string,
-    divclass?: string
+    divclass?: string,
 }
 
 const defaultProps = {
@@ -22,15 +24,16 @@ const defaultProps = {
     circleclass: '',
     svgid: '',
     circleid: '',
-    divclass: ''
+    divclass: '',
 }
 
 export const Circle = (propsIn:Props) => {
     const props = {...defaultProps, ...propsIn};
+    
   return (
     <div className={props.divclass}>
     <svg width={props.width} height={props.height} className={props.svgclass} id={props.svgid}>
-  <circle cx={props.cx} cy={props.cy} r={props.r} stroke={props.stroke} stroke-width={props.strokewidth} 
+  <circle cx={props.cx} cy={props.cy} r={props.r} stroke={props.stroke} strokeWidth={props.strokewidth} 
   fill={props.fill} className={props.circleclass} id={props.circleid} />
     </svg>
     </div>
