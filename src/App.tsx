@@ -1,7 +1,7 @@
 import { Challenge4 } from "./components/Challenge 4/Challenge4.tsx";
 import { RecoverPassword } from "./components/Challenge 5/RecoverPassword.tsx";
 import { Register } from "./components/Challenge 5/Register.tsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
 
